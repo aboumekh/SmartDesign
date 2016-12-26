@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow:
+
+User-agent: bingbot
+Disallow:
+
+sitemap: http://www.humblecreate.com/sitemap.xml
