@@ -15,12 +15,12 @@
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-
 var audioContext = new AudioContext();
 var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null;
+    StartTime = new Date();
 
 	
 var rafID = null;
@@ -63,7 +63,7 @@ function toggleRecording( e ) {
         audioRecorder.getBuffers( gotBuffers );
 	//end timer
         var end_time = new Date();
-	var recordingtime = end_time - Start_time;
+	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(Start_time/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
@@ -77,8 +77,27 @@ function toggleRecording( e ) {
         audioRecorder.record();
 		//Start timer
 	var Start_time = new Date();
+	StartTime = Start_time;
 			
     }
+}
+
+function Recordtimer(audioRecorder){
+				
+			if (e.classList.contains("recording")) {
+			//to record time
+			var Start_time = new Date();
+
+			}
+			else {
+			//To stop recording
+		    var end_time = new Date();
+			var recordingtime = end_time - Start_time;
+			var seconds = Math.round(Start_time/1000);
+			var minutes = Math.round(seconds/60);
+			var hours = Math.round(minutes /60);
+			document.getElementById("Recordingtime").innerHTML= (hours":"minutes":"seconds);
+			}
 }
 
 function convertToMono( input ) {
