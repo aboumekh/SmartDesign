@@ -20,7 +20,7 @@ var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null;
-	StartTime = new Date();
+    StartTime = new Date();
 
 	
 var rafID = null;
