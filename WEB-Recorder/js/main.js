@@ -88,6 +88,10 @@ function functiontitle1 (e) {
 document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").text;	
 }
 
+function functiontitle2 (e) {
+document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").text;	
+}
+
 function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
     var merger = audioContext.createChannelMerger(2);
