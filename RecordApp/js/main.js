@@ -20,6 +20,8 @@ var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null;
+
+	
 var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
@@ -54,18 +56,44 @@ function doneEncoding( blob ) {
 
 function toggleRecording( e ) {
     if (e.classList.contains("recording")) {
-        // stop recording
+       //stop recording
         audioRecorder.stop();
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+		//end timer
+        Recordtimer(audioRecorder);
     } else {
-        // start recording
+        //start recording
         if (!audioRecorder)
             return;
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
+		//Start timer
+		Recordtimer(audioRecorder);
+			
     }
+}
+
+function Recordtimer(audioRecorder){
+				
+			if (audioRecorder){
+			//to record time
+			var Start_time = new Date();
+			var seconds = math.round(Start_time/1000);
+			var minutes = math.round(seconds/60);
+			var hours = math.round(minutes /60);
+			document.getElementById("Recordingtime").innerHTML =hours.minutes.seconds;
+
+			}
+			
+			
+			
+		//To stop recording
+		//	var end_time = new Date();
+
+	
+	
 }
 
 function convertToMono( input ) {
@@ -83,7 +111,7 @@ function cancelAnalyserUpdates() {
     rafID = null;
 }
 
-function updateAnalysers(time) {
+function updateAnalysers(            ) {
     if (!analyserContext) {
         var canvas = document.getElementById("analyser");
         canvasWidth = canvas.width;
