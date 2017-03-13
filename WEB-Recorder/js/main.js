@@ -67,6 +67,8 @@ function toggleRecording( e ) {
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
     } else {
         //start recording
