@@ -61,8 +61,13 @@ function toggleRecording( e ) {
         audioRecorder.stop();
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
-		//end timer
-        Recordtimer(audioRecorder);
+	//end timer
+        var end_time = new Date();
+	var recordingtime = end_time - StartTime;
+	var seconds = Math.round(Start_time/1000);
+	var minutes = Math.round(seconds/60);
+	var hours = Math.round(minutes /60);
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
     } else {
         //start recording
         if (!audioRecorder)
@@ -71,7 +76,8 @@ function toggleRecording( e ) {
         audioRecorder.clear();
         audioRecorder.record();
 		//Start timer
-		Recordtimer(audioRecorder);
+	var Start_time = new Date();
+	StartTime = Start_time;
 			
     }
 }
