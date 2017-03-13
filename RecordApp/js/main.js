@@ -83,7 +83,7 @@ function Recordtimer(audioRecorder){
 			var seconds = Math.round(Start_time/1000);
 			var minutes = Math.round(seconds/60);
 			var hours = Math.round(minutes /60);
-			document.getElementById("Recordingtime").innerHTML(hours);
+			document.getElementById("Recordingtime").innerHTML="hours";
 
 			}
 			
