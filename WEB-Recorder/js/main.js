@@ -84,6 +84,10 @@ function toggleRecording( e ) {
     }
 }
 
+function functiontitle1 () {
+document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").text;	
+}
+
 function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
     var merger = audioContext.createChannelMerger(2);
