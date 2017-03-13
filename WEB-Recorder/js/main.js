@@ -84,7 +84,7 @@ function toggleRecording( e ) {
     }
 }
 
-function functiontitle1 () {
+function functiontitle1 (e) {
 document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").text;	
 }
 
