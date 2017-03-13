@@ -76,24 +76,20 @@ function toggleRecording( e ) {
 }
 
 function Recordtimer(audioRecorder){
-				
 			if (audioRecorder){
 			//to record time
 			var Start_time = new Date();
+
+			}
+			else {
+			//To stop recording
+		    var end_time = new Date();
+			var recordingtime = end_time - Start_time;
 			var seconds = Math.round(Start_time/1000);
 			var minutes = Math.round(seconds/60);
 			var hours = Math.round(minutes /60);
-			document.getElementById("Recordingtime").innerHTML="hours";
-
+			document.getElementById("Recordingtime").innerHTML= (hours":"minutes":"seconds);
 			}
-			
-			
-			
-		//To stop recording
-		//	var end_time = new Date();
-
-	
-	
 }
 
 function convertToMono( input ) {
