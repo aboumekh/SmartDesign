@@ -64,7 +64,7 @@ function toggleRecording( e ) {
 	//end timer
         var end_time = new Date();
 	var recordingtime = end_time - StartTime;
-	var seconds = Math.round(Start_time/1000);
+	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
