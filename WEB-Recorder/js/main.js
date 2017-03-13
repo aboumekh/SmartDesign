@@ -78,7 +78,7 @@ function toggleRecording( e ) {
 
 function Recordtimer(audioRecorder){
 				
-			if (audioRecorder){
+			if (e.classList.contains("recording")) {
 			//to record time
 			var Start_time = new Date();
 
