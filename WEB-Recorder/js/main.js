@@ -88,7 +88,6 @@ function functiontitle1 (x) {
 x.style.background = "yellow";
 	var end_time = new Date();
 	var recordingtime = end_time - StartTime;
-	if(end_time
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
