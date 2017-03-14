@@ -21,9 +21,9 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
     recording = false;
-var seconds = 0, 
-    minutes = 0,
-    hours = 0;
+var seconds = 1, 
+    minutes = 1,
+    hours = 1;
 var myVar = setInterval(TimerDisplay(), 1000);
 var StartTime = new Date();
 
