@@ -84,11 +84,17 @@ function toggleRecording( e ) {
     }
 }
 
-function functiontitle1 (e) {
+function functiontitle1 (x) {
+x.style.background = "yellow";
+var text;
+text = document.getElementById("Recordingtime").text;
 document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").text;	
 }
 
-function functiontitle2 (e) {
+function functiontitle2 (x) {
+x.style.background = "yellow";
+var text;
+text = document.getElementById("Recordingtime").text;
 document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").text;	
 }
 
