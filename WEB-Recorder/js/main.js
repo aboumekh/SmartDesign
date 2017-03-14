@@ -89,14 +89,14 @@ function toggleRecording( e ) {
 function functiontitle1 (x) {
 x.style.background = "yellow";
 var text;
-text = document.getElementById("Recordingtime").text;
+text = document.getElementById("Recordingtime").textContent;
 document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").textContent;	
 }
 
 function functiontitle2 (x) {
 x.style.background = "yellow";
 var text;
-text = document.getElementById("Recordingtime").text;
+text = document.getElementById("Recordingtime").textContent;
 document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").textContent;	
 }
 
