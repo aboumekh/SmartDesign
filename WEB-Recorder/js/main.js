@@ -71,7 +71,7 @@ function toggleRecording( e ) {
 	if(seconds > 60) seconds = seconds -60;
 	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-        stringT = document.getElementById("Recordingtime").text;
+        stringT = document.getElementById("Recordingtime").textContent;
     } else {
         //start recording
         if (!audioRecorder)
@@ -90,14 +90,14 @@ function functiontitle1 (x) {
 x.style.background = "yellow";
 var text;
 text = document.getElementById("Recordingtime").text;
-document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").text;	
+document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").textContent;	
 }
 
 function functiontitle2 (x) {
 x.style.background = "yellow";
 var text;
 text = document.getElementById("Recordingtime").text;
-document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").text;	
+document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").textContent;	
 }
 
 function convertToMono( input ) {
