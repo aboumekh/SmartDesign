@@ -21,7 +21,6 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
     StartTime = new Date();
- var stringT;
 
 	
 var rafID = null;
@@ -71,7 +70,6 @@ function toggleRecording( e ) {
 	if(seconds > 60) seconds = seconds -60;
 	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-        stringT = document.getElementById("Recordingtime").textContent;
     } else {
         //start recording
         if (!audioRecorder)
@@ -90,6 +88,7 @@ function functiontitle1 (x) {
 x.style.background = "yellow";
 	var end_time = new Date();
 	var recordingtime = end_time - StartTime;
+	if(end_time
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
