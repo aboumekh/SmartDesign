@@ -21,6 +21,7 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
     StartTime = new Date();
+    recording = false;
 
 	
 var rafID = null;
@@ -59,6 +60,7 @@ function toggleRecording( e ) {
     if (e.classList.contains("recording")) {
        //stop recording
         audioRecorder.stop();
+	recording = false;
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
 	//end timer
@@ -77,7 +79,8 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
-		//Start timer
+	recording = true;
+        //Start timer
 	var Start_time = new Date();
 	StartTime = Start_time;
 			
