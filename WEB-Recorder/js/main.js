@@ -88,16 +88,26 @@ function toggleRecording( e ) {
 
 function functiontitle1 (x) {
 x.style.background = "yellow";
-var text;
-text = document.getElementById("Recordingtime").textContent;
-document.getElementById("label1").innerHTML = document.getElementById("Recordingtime").textContent;	
+	var end_time = new Date();
+	var recordingtime = end_time - StartTime;
+	var seconds = Math.round(recordingtime/1000);
+	var minutes = Math.round(seconds/60);
+	var hours = Math.round(minutes /60);
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;
+	document.getElementById("label1").innerHTML= hours +":"+ minutes + ":" + seconds;
 }
 
 function functiontitle2 (x) {
 x.style.background = "yellow";
-var text;
-text = document.getElementById("Recordingtime").textContent;
-document.getElementById("label2").innerHTML = document.getElementById("Recordingtime").textContent;	
+	var end_time = new Date();
+	var recordingtime = end_time - StartTime;
+	var seconds = Math.round(recordingtime/1000);
+	var minutes = Math.round(seconds/60);
+	var hours = Math.round(minutes /60);
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;
+	document.getElementById("label2").innerHTML= hours +":"+ minutes + ":" + seconds;
 }
 
 function convertToMono( input ) {
