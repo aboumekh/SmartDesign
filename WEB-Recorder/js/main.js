@@ -22,6 +22,8 @@ var audioInput = null,
     audioRecorder = null;
     StartTime = new Date();
     recording = false;
+    myVar = setInterval(Timer, 1000);
+
 
 	
 var rafID = null;
@@ -63,6 +65,7 @@ function toggleRecording( e ) {
 	recording = false;
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+	clearInterval(myVar);
 	//end timer
         var end_time = new Date();
 	var recordingtime = end_time - StartTime;
@@ -79,12 +82,17 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
+	Timer();
 	recording = true;
         //Start timer
 	var Start_time = new Date();
 	StartTime = Start_time;
 			
     }
+}
+
+function Timer() {
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
 }
 
 function functiontitle1 (x) {
