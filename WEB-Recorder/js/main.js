@@ -95,7 +95,7 @@ function toggleRecording( e ) {
     }
 }
 
-function TimerDisplay() {
+windows.onload = function TimerDisplay() {
 	seconds++;
 	if (seconds == 60){ 
 	    seconds =0;
