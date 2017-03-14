@@ -21,6 +21,7 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
     StartTime = new Date();
+ var stringT;
 
 	
 var rafID = null;
@@ -70,6 +71,7 @@ function toggleRecording( e ) {
 	if(seconds > 60) seconds = seconds -60;
 	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+        stringT = document.getElementById("Recordingtime").text;
     } else {
         //start recording
         if (!audioRecorder)
