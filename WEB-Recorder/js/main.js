@@ -85,7 +85,8 @@ function toggleRecording( e ) {
 }
 
 function functiontitle1 (x) {
-x.style.background = "yellow";
+	if (recording){
+        x.style.background = "yellow";
 	var end_time = new Date();
 	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(recordingtime/1000);
@@ -94,10 +95,12 @@ x.style.background = "yellow";
 	if(seconds > 60) seconds = seconds -60;
 	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("label1").innerHTML= hours +":"+ minutes + ":" + seconds;
+	}
 }
 
 function functiontitle2 (x) {
-x.style.background = "yellow";
+	if (recording){
+	x.style.background = "yellow";
 	var end_time = new Date();
 	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(recordingtime/1000);
@@ -106,6 +109,7 @@ x.style.background = "yellow";
 	if(seconds > 60) seconds = seconds -60;
 	if(minutes > 60) minutes = minutes -60;
 	document.getElementById("label2").innerHTML= hours +":"+ minutes + ":" + seconds;
+	}
 }
 
 function convertToMono( input ) {
