@@ -20,9 +20,10 @@ var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null;
-    StartTime = new Date();
-    recording = false;
-    myVar = setInterval(Timer, 1000);
+    recording = false,
+    seconds,minutes,hours,
+var myVar = setInterval(TimerDisplay(), 1000);
+var StartTime = new Date();
 
 
 	
@@ -65,16 +66,17 @@ function toggleRecording( e ) {
 	recording = false;
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
 	clearInterval(myVar);
 	//end timer
-        var end_time = new Date();
+       /* var end_time = new Date();
 	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
 	if(seconds > 60) seconds = seconds -60;
-	if(minutes > 60) minutes = minutes -60;
-	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+	if(minutes > 60) minutes = minutes -60;*/
+	
     } else {
         //start recording
         if (!audioRecorder)
@@ -91,20 +93,30 @@ function toggleRecording( e ) {
     }
 }
 
-function Timer() {
+function TimerDisplay() {
+	seconds++;
+	if (seconds == 60){ 
+	    seconds =0;
+	    minutes ++;
+	}
+	if (minutes == 60){
+	    minutes = 0;
+	    hours++;
+	}
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
 }
+
 
 function functiontitle1 (x) {
 	if (recording){
         x.style.background = "yellow";
-	var end_time = new Date();
+	/*var end_time = new Date();
 	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
 	if(seconds > 60) seconds = seconds -60;
-	if(minutes > 60) minutes = minutes -60;
+	if(minutes > 60) minutes = minutes -60;*/
 	document.getElementById("label1").innerHTML= hours +":"+ minutes + ":" + seconds;
 	}
 }
@@ -112,13 +124,13 @@ function functiontitle1 (x) {
 function functiontitle2 (x) {
 	if (recording){
 	x.style.background = "yellow";
-	var end_time = new Date();
+	/*var end_time = new Date();
 	var recordingtime = end_time - StartTime;
 	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
 	if(seconds > 60) seconds = seconds -60;
-	if(minutes > 60) minutes = minutes -60;
+	if(minutes > 60) minutes = minutes -60;*/
 	document.getElementById("label2").innerHTML= hours +":"+ minutes + ":" + seconds;
 	}
 }
