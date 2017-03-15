@@ -65,18 +65,18 @@
 		<canvas id="analyser" width="500" height="250"></canvas>
 		<canvas id="wavedisplay" width="500" height="250"></canvas>
 	</div>
-	<div>
+	<div id="controls">
+		<img id="record" src="img/mic128.png" onclick="toggleRecording(this);">
+		<label type ="text" name= "Recording time" id="Recordingtime"> 00:00:00 </label>
+		<a id="save" href="#"><img src="img/save.svg"></a>
+	</div>
+		<div>
 		<input type = "text" name=" titles1" onfocus = "functiontitle1(this)"><br>
 		<label type ="text" name = "label_1" id = "label_1">time:</label>
 		<label type ="text" name = "label1" id = "label1">00:00</label>
 		<input type = "text" name=" titles2" onfocus = "functiontitle2(this)"><br>
 		<label type ="text" name = "label_2" id = "label_2">time:</label>
 		<label type ="text" name = "label2" id = "label2">00:00</label>
-	</div>
-	<div id="controls">
-		<img id="record" src="img/mic128.png" onclick="toggleRecording(this);">
-		<label type ="text" name= "Recording time" id="Recordingtime"> 00:00:00 </label>
-		<a id="save" href="#"><img src="img/save.svg"></a>
 	</div>
 </body>
 </html>
