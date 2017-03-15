@@ -82,7 +82,7 @@ function toggleRecording( e ) {
             return;
         e.classList.add("recording");
 	//e.images.src = "img/Hold.jpg";
-	document.getElementById("record").src = "img/Hold.jpg";
+	document.getElementById("record").src = "img/Hold.png";
         audioRecorder.clear();
         audioRecorder.record();
 	//TimerDisplay();
