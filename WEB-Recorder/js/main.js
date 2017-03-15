@@ -81,7 +81,8 @@ function toggleRecording( e ) {
         if (!audioRecorder)
             return;
         e.classList.add("recording");
-	e.images.src = "img/Hold.jpg";
+	//e.images.src = "img/Hold.jpg";
+	document.getElementById(e).src = "img/Hold.jpg";
         audioRecorder.clear();
         audioRecorder.record();
 	//TimerDisplay();
