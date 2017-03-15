@@ -24,6 +24,18 @@ var audioInput = null,
 var seconds = 1, 
     minutes = 1,
     hours = 1;
+windows.onload = function TimerDisplay() {
+	seconds++;
+	if (seconds == 60){ 
+	    seconds =0;
+	    minutes ++;
+	}
+	if (minutes == 60){
+	    minutes = 0;
+	    hours++;
+	}
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+}
 var myVar = setInterval(TimerDisplay(), 1000);
 var StartTime = new Date();
 
@@ -95,18 +107,7 @@ function toggleRecording( e ) {
     }
 }
 
-windows.onload = function TimerDisplay() {
-	seconds++;
-	if (seconds == 60){ 
-	    seconds =0;
-	    minutes ++;
-	}
-	if (minutes == 60){
-	    minutes = 0;
-	    hours++;
-	}
-	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-}
+
 
 
 function functiontitle1 (x) {
