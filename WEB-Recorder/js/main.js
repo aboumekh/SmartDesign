@@ -98,7 +98,7 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
-	Timer();
+	TimerDisplay();
 	recording = true;
         //Start timer
 	var Start_time = new Date();
