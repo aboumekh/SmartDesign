@@ -62,9 +62,9 @@ function toggleRecording( e ) {
     if (e.classList.contains("recording")) {
        //stop recording
         audioRecorder.stop();
-	recording = false;
-        e.classList.remove("recording");
-        audioRecorder.getBuffers( gotBuffers );
+	//recording = false;
+      //  e.classList.remove("recording");
+       // audioRecorder.getBuffers( gotBuffers );
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
 	clearInterval(myVar);
 	//end timer
