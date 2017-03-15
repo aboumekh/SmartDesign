@@ -24,7 +24,7 @@ var audioInput = null,
 var seconds = 1, 
     minutes = 1,
     hours = 1;
-window.onload = function TimerDisplay() {
+function TimerDisplay() {
 	seconds++;
 	if (seconds == 60){ 
 	    seconds =0;
