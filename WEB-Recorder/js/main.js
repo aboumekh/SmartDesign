@@ -93,7 +93,7 @@ function toggleRecording( e ) {
 }
 
 function TimerDisplay() {
-	if(recording){
+	//if(recording){
 	  seconds++;
 	  if (seconds == 60){ 
 	      seconds =0;
@@ -104,7 +104,7 @@ function TimerDisplay() {
 	      hours++;
 	  }
 	  document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-       }
+     //  }
 }
 
 
