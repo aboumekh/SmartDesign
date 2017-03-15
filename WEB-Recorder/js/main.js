@@ -20,7 +20,25 @@ var audioInput = null,
     realAudioInput = null,
     inputPoint = null,
     audioRecorder = null;
-	StartTime = new Date();
+    recording = false;
+var seconds = 1, 
+    minutes = 1,
+    hours = 1;
+function TimerDisplay() {
+	seconds++;
+	if (seconds == 60){ 
+	    seconds =0;
+	    minutes ++;
+	}
+	if (minutes == 60){
+	    minutes = 0;
+	    hours++;
+	}
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+}
+var myVar = setInterval(TimerDisplay(), 1000);
+var StartTime = new Date();
+
 
 	
 var rafID = null;
@@ -59,15 +77,20 @@ function toggleRecording( e ) {
     if (e.classList.contains("recording")) {
        //stop recording
         audioRecorder.stop();
+	recording = false;
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+	clearInterval(myVar);
 	//end timer
-        var end_time = new Date();
+       /* var end_time = new Date();
 	var recordingtime = end_time - StartTime;
-	var seconds = Math.round(Start_time/1000);
+	var seconds = Math.round(recordingtime/1000);
 	var minutes = Math.round(seconds/60);
 	var hours = Math.round(minutes /60);
-	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;*/
+	
     } else {
         //start recording
         if (!audioRecorder)
@@ -75,29 +98,44 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
-		//Start timer
+	Timer();
+	recording = true;
+        //Start timer
 	var Start_time = new Date();
 	StartTime = Start_time;
 			
     }
 }
 
-function Recordtimer(audioRecorder){
-				
-			if (e.classList.contains("recording")) {
-			//to record time
-			var Start_time = new Date();
 
-			}
-			else {
-			//To stop recording
-		    var end_time = new Date();
-			var recordingtime = end_time - Start_time;
-			var seconds = Math.round(Start_time/1000);
-			var minutes = Math.round(seconds/60);
-			var hours = Math.round(minutes /60);
-			document.getElementById("Recordingtime").innerHTML= (hours":"minutes":"seconds);
-			}
+
+
+function functiontitle1 (x) {
+	if (recording){
+        x.style.background = "yellow";
+	/*var end_time = new Date();
+	var recordingtime = end_time - StartTime;
+	var seconds = Math.round(recordingtime/1000);
+	var minutes = Math.round(seconds/60);
+	var hours = Math.round(minutes /60);
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;*/
+	document.getElementById("label1").innerHTML= hours +":"+ minutes + ":" + seconds;
+	}
+}
+
+function functiontitle2 (x) {
+	if (recording){
+	x.style.background = "yellow";
+	/*var end_time = new Date();
+	var recordingtime = end_time - StartTime;
+	var seconds = Math.round(recordingtime/1000);
+	var minutes = Math.round(seconds/60);
+	var hours = Math.round(minutes /60);
+	if(seconds > 60) seconds = seconds -60;
+	if(minutes > 60) minutes = minutes -60;*/
+	document.getElementById("label2").innerHTML= hours +":"+ minutes + ":" + seconds;
+	}
 }
 
 function convertToMono( input ) {
