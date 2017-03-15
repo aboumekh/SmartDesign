@@ -21,26 +21,11 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
     recording = false;
-var seconds = 1, 
-    minutes = 1,
-    hours = 1;
-function TimerDisplay() {
-	seconds++;
-	if (seconds == 60){ 
-	    seconds =0;
-	    minutes ++;
-	}
-	if (minutes == 60){
-	    minutes = 0;
-	    hours++;
-	}
-	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-}
+var seconds = 0, 
+    minutes = 0,
+    hours = 0;
 var myVar = setInterval(TimerDisplay(), 1000);
 var StartTime = new Date();
-
-
-	
 var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
@@ -98,7 +83,7 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
-	TimerDisplay();
+	//TimerDisplay();
 	recording = true;
         //Start timer
 	var Start_time = new Date();
@@ -107,7 +92,20 @@ function toggleRecording( e ) {
     }
 }
 
-
+function TimerDisplay() {
+	if(recording){
+	  seconds++;
+	  if (seconds == 60){ 
+	      seconds =0;
+	      minutes ++;
+	  }
+	  if (minutes == 60){
+	      minutes = 0;
+	      hours++;
+	  }
+	  document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+       }
+}
 
 
 function functiontitle1 (x) {
