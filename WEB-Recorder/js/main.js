@@ -64,8 +64,9 @@ function toggleRecording( e ) {
 		//stop recording
         audioRecorder.stop();
 	recording = false;
+       document.getElementById("record").src = "img/Record.png";
 	//recording = false;
-        e.classList.remove("recording");
+       // e.classList.remove("recording");
        // audioRecorder.getBuffers( gotBuffers );
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
 	//clearInterval(myVar); //reserve this for stop recording action
@@ -75,10 +76,10 @@ function toggleRecording( e ) {
         //start recording
         if (!audioRecorder)
             return;
-        e.classList.add("recording");
+        //e.classList.add("recording");
 	//e.images.src = "img/Hold.jpg";
-	document.getElementById("record").src = "img/Hold.png";
-       // audioRecorder.clear(); reserve this function for the stop recording action
+         document.getElementById("record").src = "img/Hold.png";		   
+      // audioRecorder.clear(); reserve this function for the stop recording action
         audioRecorder.record();
 	//TimerDisplay();
 	recording = true;
@@ -93,6 +94,7 @@ function toggleStop(e){
     //if (e.classList.contains("recording")) {
      //  if(recording){
 	//stop recording
+	document.getElementById("record").src = "img/Record.png";
         audioRecorder.stop();
 	recording = false;
 	//recording = false;
