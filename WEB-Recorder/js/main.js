@@ -63,6 +63,7 @@ function toggleRecording( e ) {
        if(recording){
 		//stop recording
         audioRecorder.stop();
+	recording = false;
 	//recording = false;
         e.classList.remove("recording");
        // audioRecorder.getBuffers( gotBuffers );
