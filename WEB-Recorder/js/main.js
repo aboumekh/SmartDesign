@@ -67,7 +67,7 @@ function toggleRecording( e ) {
         e.classList.remove("recording");
        // audioRecorder.getBuffers( gotBuffers );
 	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-	//clearInterval(myVar); reserve this for stop recording action
+	clearInterval(myVar); //reserve this for stop recording action
 	   }
 	//} 
 	else {
