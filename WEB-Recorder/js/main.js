@@ -89,6 +89,21 @@ function toggleRecording( e ) {
     }
 }
 
+toggleStop(e){
+    //if (e.classList.contains("recording")) {
+     //  if(recording){
+	//stop recording
+        audioRecorder.stop();
+	recording = false;
+	//recording = false;
+        e.classList.remove("recording");
+        audioRecorder.getBuffers( gotBuffers );
+	document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
+	clearInterval(myVar); //reserve this for stop recording action
+	//   }
+	//} 
+
+}
 
 function TimerDisplay() {
 	if(recording){
