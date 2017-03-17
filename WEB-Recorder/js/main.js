@@ -89,7 +89,7 @@ function toggleRecording( e ) {
     }
 }
 
-toggleStop(e){
+function toggleStop(e){
     //if (e.classList.contains("recording")) {
      //  if(recording){
 	//stop recording
@@ -102,7 +102,6 @@ toggleStop(e){
 	clearInterval(myVar); //reserve this for stop recording action
 	//   }
 	//} 
-
 }
 
 function TimerDisplay() {
