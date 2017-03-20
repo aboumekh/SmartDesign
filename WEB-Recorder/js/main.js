@@ -64,7 +64,7 @@ function toggleRecording( e ) {
 		//stop recording
         audioRecorder.stop();
 	recording = false;
-       document.getElementById("record").src = "img/Record.png";
+       document.getElementById("record").src = "img/Record_icon.png";
 	//recording = false;
        // e.classList.remove("recording");
        // audioRecorder.getBuffers( gotBuffers );
@@ -78,7 +78,7 @@ function toggleRecording( e ) {
             return;
         //e.classList.add("recording");
 	//e.images.src = "img/Hold.jpg";
-         document.getElementById("record").src = "img/Hold.png";		   
+         document.getElementById("record").src = "img/Hold_icon.png";		   
       // audioRecorder.clear(); reserve this function for the stop recording action
         audioRecorder.record();
 	//TimerDisplay();
