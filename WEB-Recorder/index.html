@@ -106,8 +106,17 @@
 
 </head>
 <body>
-
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+		$(function()
+		{
+			$('#idbtn').click(function() { 
+			$('#title').clone().attr('id','title_'+$(this).index()).insertAfter('#title');
+			$('#label1').clone().attr('id','label1_'+$(this).index()).insertAfter('#label1');
+			})
+		}
+	)
+</script>
 
 	<div id="viz">
 		<canvas id="analyser" width="1024" height="500"></canvas>
