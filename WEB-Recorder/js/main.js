@@ -24,6 +24,7 @@ var audioInput = null,
 var seconds = 0, 
     minutes = 0,
     hours = 0;
+	addrow = 3;
 var myVar = setInterval(TimerDisplay, 1000);
 var StartTime = new Date();
 var rafID = null;
@@ -94,7 +95,7 @@ function toggleStop(e){
     //if (e.classList.contains("recording")) {
      //  if(recording){
 	//stop recording
-	document.getElementById("record").src = "img/Record.png";
+	document.getElementById("record").src = "img/Record_icon.png";
         audioRecorder.stop();
 	recording = false;
 	//recording = false;
@@ -118,7 +119,7 @@ function TimerDisplay() {
 	      hours++;
 	  }
 	  document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
-       }
+    }
 }
 
 
@@ -135,6 +136,33 @@ function functiontitle2 (x) {
 	document.getElementById("label2").innerHTML= hours +":"+ minutes + ":" + seconds;
 	}
 }
+
+
+$(document).ready(function(){
+    $('Table tr').click(function(e){
+        var cell = $(e.target).get(0);
+        var tr = $(this);
+        $('td', tr).each(function(i, td){
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
+        });
+    });
+});
+
+
+function AddFunction(){
+	addrow = addrow + 1;
+    var table = document.getElementById("Table");
+    var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	cell1.setAttribute('contenteditable', 'true');
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "Text..";
+    cell2.innerHTML = "0:00:00";
+}
+
 
 function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
