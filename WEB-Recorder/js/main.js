@@ -24,7 +24,6 @@ var audioInput = null,
 var seconds = 0, 
     minutes = 0,
     hours = 0;
-	addrow = 3;
 var myVar = setInterval(TimerDisplay, 1000);
 var StartTime = new Date();
 var rafID = null;
@@ -153,8 +152,17 @@ $(document).ready(function(){
 
 
 function AddFunction(){
-	addrow = addrow + 1;
     var table = document.getElementById("Table");
+	 $('table tr').click(function(e){
+        var cell = $(e.target).get(0);
+        var tr = $(this);
+        $('td', tr).each(function(i, td){
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
+        });
+    });
     var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	cell1.setAttribute('contenteditable', 'true');
