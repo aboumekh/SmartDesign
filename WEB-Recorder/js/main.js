@@ -169,6 +169,24 @@ function AddFunction(){
     var cell2 = row.insertCell(1);
     cell1.innerHTML = "Text..";
     cell2.innerHTML = "0:00:00";
+	
+	    var table = document.getElementById("Table");
+	 $('table tr').click(function(e){
+        var cell = $(e.target).get(0);
+        var tr = $(this);
+        $('td', tr).each(function(i, td){
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
+        });
+    });
+    var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	cell1.setAttribute('contenteditable', 'true');
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "Text..";
+    cell2.innerHTML = "0:00:00";
 }
 
 
