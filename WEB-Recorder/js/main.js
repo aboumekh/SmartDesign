@@ -41,6 +41,10 @@ function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );
+		$("#Table").tableExport({
+	type:'pdf',
+	escape:'false',
+	});
 }
 
 function gotBuffers( buffers ) {
