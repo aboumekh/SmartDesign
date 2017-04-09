@@ -56,7 +56,11 @@ function gotBuffers( buffers ) {
 function doneEncoding( blob ) {
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
-	/* export intot PDF file */
+
+}
+
+function DownloadPDF()
+{
 	$("#Table").tableExport({
 	type:'pdf',
 	escape:'false',
@@ -143,18 +147,18 @@ function functiontitle2 (x) {
 
 
 $(document).ready(function(){
-    $('Table tr').click(function(e){
+    $('Table tr').on('click', function(e){
         var cell = $(e.target).get(0);
         var tr = $(this);
         $('td', tr).each(function(i, td){
-	 if(i==0)
-          {
-	   td.innerHTML = " ";	
-	   } 	
-	if(i==1)
-          {
-	   td.innerHTML = hours +":"+ minutes + ":" + seconds;	
-	  } 
+			if(i==0)
+            {
+			td.innerHTML = " ";	
+			} 
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
         });
     });
 });
@@ -162,43 +166,42 @@ $(document).ready(function(){
 
 function AddFunction(){
     var table = document.getElementById("Table");
-	 $('table tr').click(function(e){
+	    $('table tr').on('click', function(e){
         var cell = $(e.target).get(0);
         var tr = $(this);
         $('td', tr).each(function(i, td){
-	  if(i==0)
-           {
-	    td.innerHTML = " ";	
-	   } 	
-	 if(i==1)
-           {
-	    td.innerHTML = hours +":"+ minutes + ":" + seconds;	
-	   } 
+			if(i==0)
+            {
+			td.innerHTML = " ";	
+			} 
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
         });
     });
-    var row = table.insertRow(-1);
+	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	cell1.setAttribute('contenteditable', 'true');
     var cell2 = row.insertCell(1);
     cell1.innerHTML = "Text..";
     cell2.innerHTML = "0:00:00";
-	
 	    var table = document.getElementById("Table");
-	 $('table tr').click(function(e){
+	    $('table tr').on('click', function(e){
         var cell = $(e.target).get(0);
         var tr = $(this);
         $('td', tr).each(function(i, td){
-	 if(i==0)
-           {
-	    td.innerHTML = " ";	
-	    } 
-	 if(i==1)
-           {
-	    td.innerHTML = hours +":"+ minutes + ":" + seconds;	
-	   } 
+			if(i==0)
+            {
+			td.innerHTML = " ";	
+			} 
+			if(i==1)
+            {
+			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+			} 
         });
     });
-    var row = table.insertRow(-1);
+	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	cell1.setAttribute('contenteditable', 'true');
     var cell2 = row.insertCell(1);
