@@ -41,10 +41,7 @@ function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );
-		$("#Table").tableExport({
-	type:'pdf',
-	escape:'false',
-	});
+
 }
 
 function gotBuffers( buffers ) {
@@ -60,6 +57,10 @@ function gotBuffers( buffers ) {
 function doneEncoding( blob ) {
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
+			$("#Table").tableExport({
+	type:'pdf',
+	escape:'false',
+	});
 
 }
 
