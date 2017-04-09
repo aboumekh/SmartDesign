@@ -62,11 +62,11 @@ THE SOFTWARE.*/
 					$(el).find('tbody').find('tr').each(function(index,data) {
 						rowCalc = index+1;
 						
-					//if (rowCalc % 26 == 0){
+					if (rowCalc % 26 == 0){
 						doc.addPage();
 						page++;
 						startRowPosition=startRowPosition+10;
-					//}
+					}
 					rowPosition=(startRowPosition + (rowCalc * 10)) - ((page -1) * 280);
 						$(this).filter(':visible').find('td').each(function(index,data) {
 							if ($(this).css('display') != 'none'){	
