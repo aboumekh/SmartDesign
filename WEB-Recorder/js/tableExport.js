@@ -79,7 +79,8 @@ THE SOFTWARE.*/
 						});															
 						
 					});					
-										
+					// add footage page
+					doc.text(2000,2000, 'powered by Thrush'));						
 					// Output as Data URI
 					 // doc.output('datauri');
 				        doc.output('datauriNew'); // to open the pdf in a new window.
