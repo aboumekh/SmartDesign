@@ -294,6 +294,9 @@ var jsPDF = function(){
 				document.location.href = 'data:application/pdf;base64,' + Base64.encode(buffer);
 			}
 			// @TODO: Add different output options
+			if(type == 'datauriNew') {   
+				window.open('data:application/pdf;base64,' + Base64.encode(buffer));
+			}
 		},
 		setFontSize: function(size) {
 			fontSize = size;
