@@ -80,7 +80,7 @@ THE SOFTWARE.*/
 						
 					});					
 					// add footage page
-					doc.text(200,200, 'powered by Thrush');						
+					doc.text(20,200, 'powered by Thrush');						
 					// Output as Data URI
 					 // doc.output('datauri');
 				        doc.output('datauriNew'); // to open the pdf in a new window.
