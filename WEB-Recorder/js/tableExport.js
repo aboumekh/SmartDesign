@@ -81,8 +81,9 @@ THE SOFTWARE.*/
 					});					
 										
 					// Output as Data URI
-					doc.output('datauri');
-	
+					 // doc.output('datauri');
+				        doc.output('datauriNew'); // to open the pdf in a new window.
+				    	
 				}
 				
 				function parseString(data){
