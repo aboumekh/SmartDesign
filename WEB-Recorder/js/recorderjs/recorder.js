@@ -111,6 +111,10 @@ DEALINGS IN THE SOFTWARE.
     var link = document.getElementById("save");
     link.href = url;
     link.download = filename || 'output.wav';
+   	$("#Table").tableExport({
+     type:'pdf',
+	   escape:'false',
+  	});
   }
 
   window.Recorder = Recorder;
