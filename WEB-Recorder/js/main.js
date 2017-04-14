@@ -148,23 +148,21 @@ $(document).ready(function(){
     });
 
     /*To capture the Tab key event */	 
-    $('Table tr').on( 'keyup', function( e ) {
-    var cell = $(e.target).get(0);
+	$('Table tr').on( 'keyup', function( e ) {
+        if( e.which == 9 ) {
+	var cell = $(e.target).get(0);
         var tr = $(this);
         $('td', tr).each(function(i, td){
-			if(i==0)
-            {
-			td.innerHTML = " ";	
-			} 
-			if(i==1)
-            {
-			td.innerHTML = hours +":"+ minutes + ":" + seconds;	
-			} 
+	if(i==0)
+         {
+	  td.innerHTML = " ";	
+	 } 
+	  if(i==1)
+         {
+	  td.innerHTML = hours +":"+ minutes + ":" + seconds;	
+	  } 
         });
-	
-	/*if( e.which == 9 ) {
-        console.log( e.target.href );
-    }*/
+    }
 } );
 
 });
