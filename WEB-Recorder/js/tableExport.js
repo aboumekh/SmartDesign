@@ -82,7 +82,7 @@ THE SOFTWARE.*/
 					// add footage page
 				    	var pdfFontSize = 10;
 					doc.setFontSize(pdfFontSize);
-					doc.text(20,280, 'powered by Thrush');						
+					doc.text(20,280, 'Powered by Thrush');						
 					// Output as Data URI
 					 // doc.output('datauri');
 				        doc.output('datauriNew'); // to open the pdf in a new window.
