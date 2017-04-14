@@ -80,7 +80,7 @@ THE SOFTWARE.*/
 						
 					});					
 					// add footage page
-				    	var pdfFontSize = 11;
+				    	var pdfFontSize = 10;
 					doc.setFontSize(defaults.pdfFontSize);
 					doc.text(20,280, 'powered by Thrush');						
 					// Output as Data URI
