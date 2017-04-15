@@ -84,8 +84,9 @@ THE SOFTWARE.*/
 					doc.setFontSize(pdfFontSize);
 					doc.text(20,280, 'Powered by Thrush');						
 					// Output as Data URI
-					 // doc.output('datauri');
+					 // 
 				        doc.output('datauriNew'); // to open the pdf in a new window.*/
+				    doc.output('datauri');
 				    	
 				}
 				
