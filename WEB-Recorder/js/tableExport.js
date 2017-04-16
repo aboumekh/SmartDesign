@@ -71,7 +71,14 @@ THE SOFTWARE.*/
 						$(this).filter(':visible').find('td').each(function(index,data) {
 							if ($(this).css('display') != 'none'){	
 								if(defaults.ignoreColumn.indexOf(index) == -1){
-									var colPosition = startColPosition+ (index * 50);									
+									var colPosition = startColPosition+ (index * 50);
+									if(index == 0){
+										var leftMargin = 1;
+										var cellWidth = 5000;
+										var topMargin = 1;
+										var headerRowHeight = 20;
+									   doc.cell(leftMargin, topMargin, cellWidth, headerRowHeight, cell, index);
+									   }
 									doc.text(colPosition,rowPosition, parseString($(this)));
 								}
 							}
