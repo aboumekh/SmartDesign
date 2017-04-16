@@ -310,7 +310,7 @@ var jsPDF = function(){
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * ====================================================================
  */
-		var =      lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined },
+		var      lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined },
         setLastCellPosition = function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         },
