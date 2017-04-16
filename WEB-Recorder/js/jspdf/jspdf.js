@@ -298,7 +298,7 @@ var jsPDF = function(){
 		setFontSize: function(size) {
 			fontSize = size;
 		}
-	  var lastCellPos = { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
+	  lastCellPos = { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
           setLastCellPosition : function (x, y, w, h, ln) {
           lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         };
