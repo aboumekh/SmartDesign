@@ -279,9 +279,28 @@ var jsPDF = function(){
 			var str = sprintf('BT %.2f %.2f Td (%s) Tj ET', x * k, (pageHeight - y) * k, pdfEscape(text));
 			out(str);
 		},
-	}
+		setProperties: function(properties) {
+			documentProperties = properties;
+		},
+		addImage: function(imageData, format, x, y, w, h) {
 		
-			/** ====================================================================
+		},
+		output: function(type, options) {
+			endDocument();
+			if(type == undefined) {
+				return buffer;
+			}
+			if(type == 'datauri') {
+				document.location.href = 'data:application/pdf;base64,' + Base64.encode(buffer);
+			}
+			// @TODO: Add different output options
+		},
+		setFontSize: function(size) {
+			fontSize = size;
+		}
+	}
+	
+				/** ====================================================================
  * jsPDF Cell plugin
  * Copyright (c) 2013 Youssef Beddad, youssef.beddad@gmail.com
  *               2013 Eduardo Menezes de Morais, eduardo.morais@usp.br
@@ -317,11 +336,12 @@ var jsPDF = function(){
          getLastCellPosition = function () {
             return lastCellPos;
         };
-		cell = function (x, y, w, h, txt, ln, align) {
-			var curCell = getLastCellPosition();
+	
+	.cell = function (x, y, w, h, txt, ln, align) {
+        var curCell = getLastCellPosition();
 
         // If this is not the first cell, we must change its position
-			if (curCell.ln !== undefined) {
+        if (curCell.ln !== undefined) {
             if (curCell.ln === ln) {
                 //Same line
                 x = curCell.x + curCell.w;
@@ -341,7 +361,7 @@ var jsPDF = function(){
             }
         }
 
-			if (txt[0] !== undefined) {
+        if (txt[0] !== undefined) {
             if (this.printingHeaderRow) {
                 this.rect(x, y, w, h, 'FD');
             } else {
@@ -359,31 +379,8 @@ var jsPDF = function(){
                 this.text(txt, x + padding, y + this.internal.getLineHeight());
             }
         }
-				setLastCellPosition(x, y, w, h, ln);
-				return this;
-        };
-		setProperties= function(properties) {
-			documentProperties = properties;
-		};
-		addImage= function(imageData, format, x, y, w, h) {
-		
-		};
-		output= function(type, options) {
-			endDocument();
-			if(type == 0) {
-				return buffer;
-			}
-			if(type == 'datauri') {
-				document.location.href = 'data:application/pdf;base64,' + Base64.encode(buffer);
-			}
-			// @TODO: Add different output options
-			if(type == 'datauriNew') {   
-				window.open('data:application/pdf;base64,' + Base64.encode(buffer));
-			}
-		};
-		setFontSize= function(size) {
-			fontSize = size;
-		}
+        setLastCellPosition(x, y, w, h, ln);
+        return this;
+    }
 
 };
-
