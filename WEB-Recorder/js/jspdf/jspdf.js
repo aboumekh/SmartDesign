@@ -298,9 +298,15 @@ var jsPDF = function(){
 		setFontSize: function(size) {
 			fontSize = size;
 		}
-	  lastCellPos = { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
-          setLastCellPosition : function (x, y, w, h, ln) {
-          lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
+
+	
+	/* for resize the cell */
+	cellInitialize : function () {
+		lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
+		//pages = 1;
+		};
+         setLastCellPosition : function (x, y, w, h, ln) {
+            lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         };
          getLastCellPosition = function () {
             return lastCellPos;
