@@ -279,7 +279,7 @@ var jsPDF = function(){
 			var str = sprintf('BT %.2f %.2f Td (%s) Tj ET', x * k, (pageHeight - y) * k, pdfEscape(text));
 			out(str);
 		},
-		
+	}
 		
 			/** ====================================================================
  * jsPDF Cell plugin
@@ -310,7 +310,7 @@ var jsPDF = function(){
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * ====================================================================
  */
-		//var      lastCellPos = { x, y, w, h, ln };
+	var  lastCellPos = { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
         var setLastCellPosition = function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         };
@@ -384,7 +384,6 @@ var jsPDF = function(){
 		setFontSize: function(size) {
 			fontSize = size;
 		}
-	}
 
 };
 
