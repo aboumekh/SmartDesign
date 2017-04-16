@@ -298,46 +298,15 @@ var jsPDF = function(){
 		setFontSize: function(size) {
 			fontSize = size;
 		}
-	}
-	
-				/** ====================================================================
- * jsPDF Cell plugin
- * Copyright (c) 2013 Youssef Beddad, youssef.beddad@gmail.com
- *               2013 Eduardo Menezes de Morais, eduardo.morais@usp.br
- *               2013 Lee Driscoll, https://github.com/lsdriscoll
- *               2014 Juan Pablo Gaviria, https://github.com/juanpgaviria
- *               2014 James Hall, james@parall.ax
- *               2014 Diego Casorran, https://github.com/diegocr
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
- */
-	var  lastCellPos = { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
-        var setLastCellPosition = function (x, y, w, h, ln) {
+		 lastCellPos : { x:undefined, y:undefined, w:undefined, h:undefined, ln:undefined };
+         setLastCellPosition : function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         };
          getLastCellPosition = function () {
             return lastCellPos;
         };
 	
-	var cell = function (x, y, w, h, txt, ln, align) {
+	 cell : function (x, y, w, h, txt, ln, align) {
         var curCell = getLastCellPosition();
 
         // If this is not the first cell, we must change its position
@@ -382,5 +351,37 @@ var jsPDF = function(){
         setLastCellPosition(x, y, w, h, ln);
         return this;
     }
+	}
+	
+				/** ====================================================================
+ * jsPDF Cell plugin
+ * Copyright (c) 2013 Youssef Beddad, youssef.beddad@gmail.com
+ *               2013 Eduardo Menezes de Morais, eduardo.morais@usp.br
+ *               2013 Lee Driscoll, https://github.com/lsdriscoll
+ *               2014 Juan Pablo Gaviria, https://github.com/juanpgaviria
+ *               2014 James Hall, james@parall.ax
+ *               2014 Diego Casorran, https://github.com/diegocr
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * ====================================================================
+ */
+	
 
 };
