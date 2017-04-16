@@ -361,13 +361,13 @@ var jsPDF = function(){
         }
 				setLastCellPosition(x, y, w, h, ln);
 				return this;
-        },
+        };
 		setProperties= function(properties) {
 			documentProperties = properties;
-		},
+		};
 		addImage= function(imageData, format, x, y, w, h) {
 		
-		},
+		};
 		output= function(type, options) {
 			endDocument();
 			if(type == 0) {
@@ -380,7 +380,7 @@ var jsPDF = function(){
 			if(type == 'datauriNew') {   
 				window.open('data:application/pdf;base64,' + Base64.encode(buffer));
 			}
-		},
+		};
 		setFontSize= function(size) {
 			fontSize = size;
 		}
