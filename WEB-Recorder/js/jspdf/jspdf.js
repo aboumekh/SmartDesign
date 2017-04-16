@@ -297,24 +297,22 @@ var jsPDF = function(){
 		},
 		setFontSize: function(size) {
 			fontSize = size;
-		}
+		},
 
 	
 	/* for resize the cell */
 	cellInitialize : function () {
 		lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
 		//pages = 1;
-		};
+		},
          setLastCellPosition : function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
-        };
+        },
          getLastCellPosition = function () {
             return lastCellPos;
-        };
-	
+        },	
 	 cell : function (x, y, w, h, txt, ln, align) {
         var curCell = getLastCellPosition();
-
         // If this is not the first cell, we must change its position
         if (curCell.ln !== undefined) {
             if (curCell.ln === ln) {
@@ -332,7 +330,6 @@ var jsPDF = function(){
                 }
                 //We ignore the passed y: the lines may have diferent heights
                 y = (getLastCellPosition().y + getLastCellPosition().h);
-
             }
         }
 
