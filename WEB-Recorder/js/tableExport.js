@@ -77,7 +77,7 @@ THE SOFTWARE.*/
 										var cellWidth = 5000;
 										var topMargin = 1;
 										var headerRowHeight = 20;
-									   doc.cell(leftMargin, topMargin, cellWidth, headerRowHeight, cell, index);
+									   doc.cell(leftMargin, topMargin, cellWidth, headerRowHeight, data, index);
 									   }
 									doc.text(colPosition,rowPosition, parseString($(this)));
 								}
