@@ -310,18 +310,18 @@ var jsPDF = function(){
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * ====================================================================
  */
-		var      lastCellPos = { x: 0, y: 0, w: 0, h: 0, ln: 0 },
-        setLastCellPosition = function (x, y, w, h, ln) {
+		var      lastCellPos = { x, y, w, h, ln };
+        var setLastCellPosition = function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
-        },
-        getLastCellPosition = function () {
+        };
+         getLastCellPosition = function () {
             return lastCellPos;
-        },
+        };
 		cell : function (x, y, w, h, txt, ln, align) {
 			var curCell = getLastCellPosition();
 
         // If this is not the first cell, we must change its position
-			if (curCell.ln !== 0) {
+			if (curCell.ln !== undefined) {
             if (curCell.ln === ln) {
                 //Same line
                 x = curCell.x + curCell.w;
@@ -341,7 +341,7 @@ var jsPDF = function(){
             }
         }
 
-			if (txt[0] !== 0) {
+			if (txt[0] !== undefined) {
             if (this.printingHeaderRow) {
                 this.rect(x, y, w, h, 'FD');
             } else {
