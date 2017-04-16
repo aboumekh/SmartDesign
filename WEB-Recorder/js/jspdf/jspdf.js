@@ -337,7 +337,7 @@ var jsPDF = function(){
             return lastCellPos;
         };
 	
-	.cell = function (x, y, w, h, txt, ln, align) {
+	var cell = function (x, y, w, h, txt, ln, align) {
         var curCell = getLastCellPosition();
 
         // If this is not the first cell, we must change its position
