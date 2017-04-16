@@ -341,7 +341,7 @@ var jsPDF = function(){
             }
         }
 
-			if (txt[0] !== undefined) {
+			if (txt[0] !== 0) {
             if (this.printingHeaderRow) {
                 this.rect(x, y, w, h, 'FD');
             } else {
@@ -370,7 +370,7 @@ var jsPDF = function(){
 		},
 		output: function(type, options) {
 			endDocument();
-			if(type == undefined) {
+			if(type == 0) {
 				return buffer;
 			}
 			if(type == 'datauri') {
