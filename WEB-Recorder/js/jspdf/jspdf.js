@@ -317,7 +317,7 @@ var jsPDF = function(){
          getLastCellPosition = function () {
             return lastCellPos;
         };
-		cell : function (x, y, w, h, txt, ln, align) {
+		cell = function (x, y, w, h, txt, ln, align) {
 			var curCell = getLastCellPosition();
 
         // If this is not the first cell, we must change its position
@@ -362,13 +362,13 @@ var jsPDF = function(){
 				setLastCellPosition(x, y, w, h, ln);
 				return this;
         },
-		setProperties: function(properties) {
+		setProperties= function(properties) {
 			documentProperties = properties;
 		},
-		addImage: function(imageData, format, x, y, w, h) {
+		addImage= function(imageData, format, x, y, w, h) {
 		
 		},
-		output: function(type, options) {
+		output= function(type, options) {
 			endDocument();
 			if(type == 0) {
 				return buffer;
@@ -381,7 +381,7 @@ var jsPDF = function(){
 				window.open('data:application/pdf;base64,' + Base64.encode(buffer));
 			}
 		},
-		setFontSize: function(size) {
+		setFontSize= function(size) {
 			fontSize = size;
 		}
 
