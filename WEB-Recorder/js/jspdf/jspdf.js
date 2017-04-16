@@ -35,6 +35,9 @@ var jsPDF = function(){
 	var fontSize = 16; // Default font size
 	var pageFontSize = 16;
 	var lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
+	var setLastCellPosition = function (x, y, w, h, ln) {
+            lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
+        };
 
 	// Initilisation 
 	if (unit == 'pt') {
