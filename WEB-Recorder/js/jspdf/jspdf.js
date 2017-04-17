@@ -299,6 +299,9 @@ var jsPDF = function(){
 			if(type == 'datauri') {
 				document.location.href = 'data:application/pdf;base64,' + Base64.encode(buffer);
 			}
+			if(type == 'datauriNew') {   
+   			 window.open('data:application/pdf;base64,' + Base64.encode(buffer));
+			}
 			// @TODO: Add different output options
 		},
 		setFontSize: function(size) {
