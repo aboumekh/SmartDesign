@@ -34,11 +34,6 @@ var jsPDF = function(){
 	var documentProperties = {};
 	var fontSize = 16; // Default font size
 	var pageFontSize = 16;
-	var lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
-	var setLastCellPosition = function (x, y, w, h, ln) {
-            lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
-        };
-
 	// Initilisation 
 	if (unit == 'pt') {
 		k = 1;
@@ -269,9 +264,7 @@ var jsPDF = function(){
 	var pdfEscape = function(text) {
 		return text.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
 	}
-	getLastCellPosition = function () {
-            return lastCellPos;
-        }
+
 	return {
 		addPage: function() {
 			_addPage();
@@ -304,59 +297,5 @@ var jsPDF = function(){
 		setFontSize: function(size) {
 			fontSize = size;
 		},
-
-	
-	/* for resize the cell */
-	cellInitialize : function () {
-		lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
-		//pages = 1;
-		},
-         setLastCellPosition : function (x, y, w, h, ln) {
-            lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
-        },
-	
-	 cell : function (x, y, w, h, txt, ln, align) {
-        var curCell = getLastCellPosition();
-        // If this is not the first cell, we must change its position
-        if (curCell.ln !== undefined) {
-            if (curCell.ln === ln) {
-                //Same line
-                x = curCell.x + curCell.w;
-                y = curCell.y;
-            } else {
-                //New line
-                var margins = this.margins || NO_MARGINS;
-                if ((curCell.y + curCell.h + h + margin) >= this.internal.pageSize.height - margins.bottom) {
-                    this.cellAddPage();
-                    if (this.printHeaders && this.tableHeaderRow) {
-                        this.printHeaderRow(ln, true);
-                    }
-                }
-                //We ignore the passed y: the lines may have diferent heights
-                y = (getLastCellPosition().y + getLastCellPosition().h);
-            }
-        }
-
-        if (txt[0] !== undefined) {
-            if (this.printingHeaderRow) {
-                this.rect(x, y, w, h, 'FD');
-            } else {
-                this.rect(x, y, w, h);
-            }
-            if (align === 'right') {
-                if (txt instanceof Array) {
-                    for(var i = 0; i<txt.length; i++) {
-                        var currentLine = txt[i];
-                        var textSize = this.getStringUnitWidth(currentLine) * this.internal.getFontSize();
-                        this.text(currentLine, x + w - textSize - padding, y + this.internal.getLineHeight()*(i+1));
-                    }
-                }
-            } else {
-                this.text(txt, x + padding, y + this.internal.getLineHeight());
-            }
-        }
-        setLastCellPosition(x, y, w, h, ln);
-        return this;
-    }
 	}
 };
