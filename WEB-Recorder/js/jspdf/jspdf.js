@@ -296,6 +296,6 @@ var jsPDF = function(){
 		},
 		setFontSize: function(size) {
 			fontSize = size;
-		},
+		}
 	}
 };
