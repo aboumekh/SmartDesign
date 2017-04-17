@@ -58,7 +58,7 @@ THE SOFTWARE.*/
 				
 				
 					// Row Vs Column
-					var startRowPosition = 20; var page =1;var rowPosition=0;
+					var startRowPosition = 40; var page =1;var rowPosition=0;
 					$(el).find('tbody').find('tr').each(function(index,data) {
 						rowCalc = index+1;
 						
@@ -71,15 +71,13 @@ THE SOFTWARE.*/
 						$(this).filter(':visible').find('td').each(function(index,data) {
 							if ($(this).css('display') != 'none'){	
 								if(defaults.ignoreColumn.indexOf(index) == -1){
-									var colPosition = startColPosition+ (index * 50);
-									
-										var leftMargin = 1;
-										var cellWidth = 5000;
-										var topMargin = 1;
-										var headerRowHeight = 20;
-									  doc.cell(leftMargin, topMargin, cellWidth, headerRowHeight, data, index);
-									  
-									doc.text(colPosition,rowPosition, parseString($(this)));
+								var colPosition = startColPosition+ (index * 50);
+								var leftMargin = 10;
+								var cellWidth = 5000;
+								var topMargin = 10;
+								var headerRowHeight = 20;
+  							       doc.cell(leftMargin, topMargin, cellWidth, headerRowHeight, data, index);
+ 								doc.text(colPosition,rowPosition, parseString($(this)));
 								}
 							}
 							
@@ -89,7 +87,7 @@ THE SOFTWARE.*/
 					// add footage page
 				    	var pdfFontSize = 10;
 					doc.setFontSize(pdfFontSize);
-					doc.text(20,280, 'Powered by Thrush');						
+					doc.text(20,840, 'Powered by Thrush');						
 					// Output as Data URI
 					doc.output('datauri');
 					// doc.output('datauriNew'); // to open the pdf in a new window.
