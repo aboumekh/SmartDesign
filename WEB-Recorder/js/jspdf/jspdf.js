@@ -34,12 +34,16 @@ var jsPDF = function(){
 	var documentProperties = {};
 	var fontSize = 16; // Default font size
 	var pageFontSize = 16;
+	
+	/* to manage the cell width */
+	var margin = 13;
 	var lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined };
 	var setLastCellPosition = function (x, y, w, h, ln) {
             lastCellPos = { 'x': x, 'y': y, 'w': w, 'h': h, 'ln': ln };
         };
 	var NO_MARGINS = {left:0, top:0, bottom: 0};
-
+	/* to manage the cell width */
+	
 	// Initilisation 
 	if (unit == 'pt') {
 		k = 1;
