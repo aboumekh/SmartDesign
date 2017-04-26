@@ -128,7 +128,7 @@ function TimerDisplay() {
 	  }
 	  document.getElementById("Recordingtime").innerHTML= hours +":"+ minutes + ":" + seconds;
     }
-}
+}; //à voir si j'enlève le ';'
 
 $(document).ready(function(){
 	
