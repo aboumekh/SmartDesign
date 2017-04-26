@@ -130,16 +130,16 @@ function TimerDisplay() {
     }
 }
 
-$(document).ready(function){
+$(document).ready(function(){
 	
 	$('DocTitle').on( 'keyup', function( e ) {
 			document.getElementById("DocTitle").value ="";
-	}
+	});
 	
 	$('DocTitle').on( 'click', function( e ) {
 			document.getElementById("DocTitle").value ="";
-	}
-}
+	});
+});
 			 
 $(document).ready(function(){
     $('Table tr').on('click', function(e){
