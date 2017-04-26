@@ -133,11 +133,13 @@ function TimerDisplay() {
 $(document).ready(function(){
 	
 	$('DocTitle').on( 'keyup', function( e ) {
-			document.getElementById("DocTitle").value ="";
+			//document.getElementById("DocTitle").value ="";
+		DocTitle.innerHTML = " ";
 	});
 	
 	$('DocTitle').on( 'click', function( e ) {
-			document.getElementById("DocTitle").value ="";
+			//document.getElementById("DocTitle").value ="";
+		DocTitle.innerHTML = " ";
 	});
 });
 			 
